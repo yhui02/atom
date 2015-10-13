@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+require('shelljs/global');
+
+var argv = require('yargs')
+    .command("morning", "good morning", function (yargs) {
+        echo("Good Morning");
+        var argv = yargs.reset()
+            .option("m", {
+                alias: "message",
+                description: "provide any sentence"
+            })
+            .help("h")
+            .alias("h", "help")
+            .argv;
+
+        if (argv.h) {
+            echo('help...');
+        }
+        echo(argv.m);
+    })
+    .command("evening", "good evening", function (yargs) {
+        echo("Good Evening");
+    })
+    .option('name', {
+        alias : 'n',
+        demand: true,
+        default: 'tom',
+        describe: 'your name',
+        type: 'string'
+    })
+    .usage('Usage: hello [options]')
+    .example('hello -n world', 'say hello to world')
+    .help('h')
+    .alias('h', 'help')
+    .epilog('copyright 2015')
+    .argv;
+
+console.log('hello ', argv.n);
