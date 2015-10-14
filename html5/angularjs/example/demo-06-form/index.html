@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+    <style>
+    body{margin:1em;}
+    </style>
+  </head>
+  <body>
+        <form ng-submit="addUser()" name='addUserForm' novalidate ng-controller="AddUserController">
+            <div ng-show='message'>{{message}}</div>
+            <div>First name: <input name='firstName' ng-model='user.first' required></div>
+            <div>Last name: <input ng-model='user.last' required></div>
+            <div>Email: <input type='email' ng-model='user.email' required></div>
+            <div>Age: <input type='number'
+                             ng-model='user.age'
+                             ng-maxlength='3'
+                             ng-min='1'></div>
+            <div>
+                <button type="submit" ng-disabled='!addUserForm.$valid'>Submit</button>
+            </div>
+        </form>
+  </body>
+</html>
