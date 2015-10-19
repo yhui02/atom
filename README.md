@@ -10,3 +10,11 @@ ATOM
     ├── node    //node shell示例代码
     └── nodejs  //nodejs示例项目
 
+
+------
+
+JAVASCRIPT Tools
+
+- [UnderscoreJS基础工具类](http://underscorejs.org)
+- [lodash基础工具类](https://lodash.com/docs#support)
+- [MomentJS时间工具类](http://momentjs.com/docs/)
