@@ -23,7 +23,7 @@ var argv = require('yargs')
         echo("Good Evening");
     })
     .option('name', {
-        alias : 'n',
+        alias: 'n',
         demand: true,
         default: 'tom',
         describe: 'your name',
