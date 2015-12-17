@@ -19,7 +19,7 @@ public class AESForNodejs {
      * @return
      * @throws Exception
      */
-    private static String decrypt(String encrypted, String seed) throws Exception {
+    public static String decrypt(String encrypted, String seed) throws Exception {
         byte[] keyb = seed.getBytes(DEFAULT_CODING);
         MessageDigest md = MessageDigest.getInstance("MD5");
         byte[] thedigest = md.digest(keyb);
